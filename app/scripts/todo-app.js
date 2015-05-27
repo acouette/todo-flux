@@ -4,33 +4,32 @@
 import React from 'react';
 import TodoInput from './todo-input';
 import TodoList from './todo-list';
+import TodoStore from './store/todo-store';
 
 class TodoApp extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
-        this.state = {items: [{
-            id: 1,
-            text: 'hello 1'
-        }, {
-            id: 2,
-            text: 'hello 2'
-        }], text: ''}
+        //this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
+        this.state = this.getTodoState();
+        TodoStore.addChangeListener(this.handleChangeFromStore.bind(this))
     }
 
-    handleTodoSubmit (todo) {
-        console.log('handle comment submit : '+todo);
-        var todos = this.state.items;
-        var newTodos = todos.concat([todo]);
-        this.setState({items: newTodos});
+    handleChangeFromStore() {
+        this.setState(this.getTodoState());
+    }
+
+    getTodoState() {
+        return {
+            allTodos: TodoStore.getAll()
+        };
     }
 
     render() {
-     return <div>
-            <TodoInput onTodoSubmit={this.handleTodoSubmit}></TodoInput>
-            <TodoList items={this.state.items}></TodoList>
-         </div>
+        return <div className="app-container">
+            <TodoInput></TodoInput>
+            <TodoList items={this.state.allTodos}></TodoList>
+        </div>
     }
 
 }

@@ -12,6 +12,8 @@
     "babelify": "^6.1.1",
     "browser-sync": "^2.7.3",
     "browserify": "^10.2.1",
+    "events": "^1.0.2",
+    "flux": "^2.0.3",
     "gulp": "^3.8.11",
     "react": "^0.13.3"
   }

@@ -15,7 +15,7 @@ gulp.task('serve', ['browserify'], function () {
         server: ["./dist", './app']
     });
 
-    gulp.watch('app/scripts/*.js', ['js-watch']);
+    gulp.watch('app/scripts/**/*.js', ['js-watch']);
 
 });
 

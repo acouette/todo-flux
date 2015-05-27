@@ -1,28 +1,33 @@
 import React from 'react';
+import TodoActions from './action/todo-actions.js'
 
 class TodoInput extends React.Component {
 
+
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.ENTER_KEY = 13;
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        var todoText = React.findDOMNode(this.refs.todoText).value.trim();
-        if (!todoText) {
+
+    handleKeyDown(e) {
+        if (e.which === this.ENTER_KEY) {
+            var todoText = React.findDOMNode(this.refs.todoText).value.trim();
+            if (!todoText) {
+                return;
+            }
+            TodoActions.create(todoText);
+            React.findDOMNode(this.refs.todoText).value = '';
             return;
         }
-        this.props.onTodoSubmit({id: parseInt(Math.random() * 1000, 10), text: todoText});
-        React.findDOMNode(this.refs.todoText).value = '';
-        return;
     }
 
     render() {
-        return <form onSubmit={this.handleSubmit}>
-            <input id="todoText" ref="todoText" type="text" placeholder="Enter todo"></input>
-            <input type="submit" value="Add"/>
-        </form>;
+        return <div className="input-container">
+            <input id="todoText" ref="todoText" type="text" placeholder="What needs to be done?"
+                   onKeyDown={this.handleKeyDown}></input>
+        </div>;
     }
 }
 
