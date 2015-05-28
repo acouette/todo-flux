@@ -1,8 +1,7 @@
 import React from 'react';
-import TodoActions from './action/todo-actions.js'
+import TodoActions from '../todo-actions.js'
 
-class TodoInput extends React.Component {
-
+class TodoListInput extends React.Component {
 
     constructor(props) {
         super(props);
@@ -31,4 +30,4 @@ class TodoInput extends React.Component {
     }
 }
 
-export default TodoInput;
+export default TodoListInput;

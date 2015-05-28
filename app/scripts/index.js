@@ -3,8 +3,8 @@
  */
 
 import React from 'react';
-import TodoApp from './todo-app';
+import TodoListApp from './todolist/app';
+import TodoHistoryApp from './todohistory/app';
 
 
-React.render(<TodoApp/>, document.getElementById('app'));
-
+React.render(<div><TodoListApp/><TodoHistoryApp/></div>, document.getElementById('app'));

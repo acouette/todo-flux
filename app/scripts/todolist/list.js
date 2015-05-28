@@ -1,11 +1,10 @@
 /**
  * Created by acouette on 5/25/15.
  */
-
 import React from 'react'
-import TodoActions from './action/todo-actions';
+import TodoActions from '../todo-actions';
 
-class TodoList extends React.Component {
+class TodoListList extends React.Component {
 
     constructor() {
         super();
@@ -43,4 +42,4 @@ class TodoList extends React.Component {
     }
 }
 
-export default TodoList;
+export default TodoListList;

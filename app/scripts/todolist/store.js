@@ -1,18 +1,18 @@
 /**
  * Created by ace on 5/27/15.
  */
-import AppDispatcher from '../dispatcher/todo-dispatcher';
+import todoDispatcher from '../todo-dispatcher';
 import Events from 'events';
 
 var CHANGE_EVENT = 'change';
 
-class TodoStore extends Events.EventEmitter {
+class TodoListStore extends Events.EventEmitter {
 
     constructor() {
         super();
         this.addChangeListener = this.addChangeListener.bind(this);
         this.todos = {};
-        AppDispatcher.register(this.handleAction.bind(this));
+        todoDispatcher.register(this.handleAction.bind(this));
     }
 
     handleAction(action) {
@@ -45,6 +45,6 @@ class TodoStore extends Events.EventEmitter {
 
 }
 
-var myTodoStore = new TodoStore()
+var todoListStore = new TodoListStore()
 
-export default myTodoStore;
+export default todoListStore;
