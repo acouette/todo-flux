@@ -3,27 +3,19 @@
  */
 import React from 'react'
 import TodoActions from '../todo-actions';
+import TodoListItem from './item'
 
 class TodoListList extends React.Component {
 
     constructor() {
         super();
-        this.onDelete = this.onDelete.bind(this);
     }
 
-    onDelete(id) {
-        TodoActions.delete(id);
-    }
 
 
     render() {
         var createItem = (item, index)  => {
-            var deleteMe = ()=>this.onDelete(item.id);
-            return <li key={item.id}>
-                <input type="checkbox"></input>
-                <span className="list-item-text">{item.text}</span>
-                <button onClick={deleteMe}>delete</button>
-            </li>;
+            return <TodoListItem key={index} item={item}></TodoListItem>;
         };
 
         var itemsArray =[];
