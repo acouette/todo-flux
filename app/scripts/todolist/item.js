@@ -9,20 +9,21 @@ class TodoListItem extends React.Component {
 
     constructor() {
         super();
-        this.deleteMe = this.deleteMe.bind(this);
     }
 
-
-    deleteMe() {
+    deleteMe = () => {
         TodoActions.delete(this.props.item.id);
-    }
+    };
 
+    onCheck = () => {
+        this.props.onCheck(this.props.item.id);
+    };
 
     render() {
-        return <li key={this.props.item.id} className='clearfix'>
-            <input type="checkbox"></input>
-            <span className="list-item-text">{this.props.item.text}</span>
-            <button onClick={this.deleteMe} className='list-item-destroy'>delete</button>
+        return <li key={this.props.item.id} className='todolist-item'>
+            <input type="checkbox" onChange={this.onCheck}></input>
+            <span>{this.props.item.text}</span>
+            <button onClick={this.deleteMe}></button>
         </li>
     }
 

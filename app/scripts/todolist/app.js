@@ -11,18 +11,18 @@ class TodoListApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.getTodoState();
-        todoListStore.addChangeListener(this.handleChangeFromStore.bind(this))
+        todoListStore.addChangeListener(this.handleChangeFromStore)
     }
 
-    handleChangeFromStore() {
+    handleChangeFromStore = () => {
         this.setState(this.getTodoState());
     }
 
-    getTodoState() {
+    getTodoState = () => {
         return {
             allTodos: todoListStore.getAll()
         };
-    }
+    };
 
     render() {
         return <div className="todolist-container">

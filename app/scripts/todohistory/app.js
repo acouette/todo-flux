@@ -9,12 +9,12 @@ class TodoHistoryApp extends React.Component {
     constructor() {
         super();
         this.state = todoHistoryStore.getHistory();
-        todoHistoryStore.addChangeListener(this.storeChangeListener.bind(this));
+        todoHistoryStore.addChangeListener(this.storeChangeListener);
     }
 
-    storeChangeListener() {
+    storeChangeListener = () => {
         this.setState(todoHistoryStore.getHistory());
-    }
+    };
 
     render() {
         return <div className="todohistory-container">

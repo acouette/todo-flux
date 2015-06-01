@@ -14,10 +14,10 @@ class TodoHistoryStore extends Events.EventEmitter {
             created: 0,
             deleted: 0
         }
-        todoDispatcher.register(this.handleAction.bind(this));
+        todoDispatcher.register(this.handleAction);
     }
 
-    handleAction(action) {
+    handleAction = (action) => {
 
         switch (action.actionType) {
             case 'TODO_CREATE':
@@ -30,7 +30,7 @@ class TodoHistoryStore extends Events.EventEmitter {
                 throw new Error('Unknow action type ${action.actionType}');
         }
         this.emit(CHANGE_EVENT);
-    }
+    };
 
     addChangeListener(callback) {
         this.on(CHANGE_EVENT, callback);

@@ -25,10 +25,13 @@ gulp.task('js-watch', ['browserify'], reload);
 gulp.task('browserify', [], function () {
     return browserify('app/scripts/index.js',
         {debug: true})
-        .transform(babelify)
+        .transform(babelify,{
+            "optional": ["es7.classProperties"]
+        })
         .bundle()
         .on("error", function (err) {
             console.log("Error : " + err.message);
         })
         .pipe(fs.createWriteStream("dist/bundle.js"));
+
 });

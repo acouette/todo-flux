@@ -10,13 +10,13 @@
     justify-content: center;
 }
 
-.input-container {
+.todolist-input-container {
 
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     width: 400px;
 }
 
-#todoText {
+.todolist-input-input {
     padding: 16px 16px 16px 50px;
     border: none;
     background: rgba(255, 255, 255, 0.85);
@@ -25,41 +25,67 @@
     width: 100%;
 }
 
-.list-container {
+.todolist-list-container {
     margin-top: 10px;
     width: 400px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.85);
 }
 
-.list-container ul {
+.todolist-list-container ul {
     list-style-type: none;
 }
 
-.list-container li {
+.todolist-list-container li {
     font-size: 24px;
     padding: 16px 16px 16px 0px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.list-container li:first-child {
+.todolist-list-container li:first-child {
     border-top: none;
 }
 
-.list-item-text {
+.todolist-list-container input[type="checkbox"]:checked {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>')
+}
+
+.todolist-list-container input[type="checkbox"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>')
+}
+
+.todolist-item span {
     vertical-align: 50%;
+    display: inline-block;
+    width: 250px;
     padding-left: 20px;
 }
 
-.list-item-destroy {
-    float: right;
+.todolist-item button {
+    outline: none;
+    display: none;
+    width: 40px;
     height: 40px;
     font-size: 30px;
     color: #cc9a9a;
-    margin-bottom: 11px;
+    vertical-align: top;
     transition: color 0.2s ease-out;
+    border: none;
+    background: transparent;
 }
 
-.clearfix {
-    overflow: auto;
+.todolist-item button:after {
+    content: 'x';
+}
+.todolist-item button:hover {
+    color: #af5b5e;
+}
+
+
+.todolist-item:hover button {
+    display: inline;
 }

@@ -5,12 +5,11 @@ class TodoListInput extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
         this.ENTER_KEY = 13;
     }
 
 
-    handleKeyDown(e) {
+    handleKeyDown = (e) => {
         if (e.which === this.ENTER_KEY) {
             var todoText = React.findDOMNode(this.refs.todoText).value.trim();
             if (!todoText) {
@@ -20,11 +19,11 @@ class TodoListInput extends React.Component {
             React.findDOMNode(this.refs.todoText).value = '';
             return;
         }
-    }
+    };
 
     render() {
-        return <div className="input-container">
-            <input id="todoText" ref="todoText" type="text" placeholder="What needs to be done?"
+        return <div className="todolist-input-container">
+            <input className="todolist-input-input" ref="todoText" type="text" placeholder="What needs to be done?"
                    onKeyDown={this.handleKeyDown}></input>
         </div>;
     }

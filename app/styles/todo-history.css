@@ -1,4 +1,4 @@
-.todohistory-container{
+.todohistory-container {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.todohistory-panel{
+.todohistory-panel {
     width: 400px;
     margin-top: 50px;
     text-align: center;

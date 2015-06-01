@@ -10,12 +10,11 @@ class TodoListStore extends Events.EventEmitter {
 
     constructor() {
         super();
-        this.addChangeListener = this.addChangeListener.bind(this);
         this.todos = {};
-        todoDispatcher.register(this.handleAction.bind(this));
+        todoDispatcher.register(this.handleAction);
     }
 
-    handleAction(action) {
+    handleAction = (action) => {
         switch (action.actionType) {
             case 'TODO_CREATE':
                 const id = new Date().getTime();
@@ -33,15 +32,15 @@ class TodoListStore extends Events.EventEmitter {
         }
 
         this.emit(CHANGE_EVENT);
-    }
+    };
 
-    addChangeListener(callback) {
+    addChangeListener = (callback) => {
         this.on(CHANGE_EVENT, callback);
-    }
+    };
 
-    getAll() {
+    getAll = () => {
         return this.todos;
-    }
+    };
 
 }
 

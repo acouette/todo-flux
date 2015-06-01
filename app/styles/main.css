@@ -1,8 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     width: 960px;
     margin: 20px auto;
     background: #f5f5f5;
@@ -11,32 +11,19 @@ body{
     color: #8e8e8e;
 }
 
-h1{
+h1 {
     text-align: center;
     color: rgba(175, 47, 47, 0.15);
 }
 
-input[type="checkbox"]{
-    appearance:none;
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    outline: none;
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>')
-}
-input[type="checkbox"]:checked{
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>')
-}
-
-
-
-
-
 input::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.09);
 }
+
 input::-moz-placeholder {
     color: rgba(0, 0, 0, 0.09);
 }
+
 input:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.09);
 }
