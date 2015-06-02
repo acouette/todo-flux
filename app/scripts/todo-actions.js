@@ -18,6 +18,13 @@ class TodoActions{
             id: id
         })
     }
+
+    complete(id){
+        todoDispatcher.dispatch({
+            actionType: 'TODO_COMPLETE',
+            id: id
+        });
+    }
 }
 
 var todoActions = new TodoActions();

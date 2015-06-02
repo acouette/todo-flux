@@ -19,7 +19,7 @@ class TodoHistoryApp extends React.Component {
     render() {
         return <div className="todohistory-container">
             <div className="todohistory-panel">
-                Created : {this.state.history.created} - Deleted : {this.state.history.deleted}
+                Created : {this.state.history.created} - Deleted : {this.state.history.deleted} - Completed : {this.state.history.completed}
             </div>
         </div>
     }

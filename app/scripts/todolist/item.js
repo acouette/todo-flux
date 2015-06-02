@@ -15,14 +15,14 @@ class TodoListItem extends React.Component {
         TodoActions.delete(this.props.item.id);
     };
 
-    onCheck = () => {
-        this.props.onCheck(this.props.item.id);
+    completeMe = () => {
+        TodoActions.complete(this.props.item.id);
     };
 
     render() {
         return <li key={this.props.item.id} className='todolist-item'>
-            <input type="checkbox" onChange={this.onCheck}></input>
-            <span>{this.props.item.text}</span>
+            <input type="checkbox" onChange={this.completeMe} checked={this.props.item.completed}></input>
+            <span className={this.props.item.completed?'todolist-item-completed':''}>{this.props.item.text}</span>
             <button onClick={this.deleteMe}></button>
         </li>
     }

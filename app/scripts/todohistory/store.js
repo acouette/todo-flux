@@ -12,7 +12,8 @@ class TodoHistoryStore extends Events.EventEmitter {
         super();
         this.history = {
             created: 0,
-            deleted: 0
+            deleted: 0,
+            completed: 0
         }
         todoDispatcher.register(this.handleAction);
     }
@@ -25,6 +26,9 @@ class TodoHistoryStore extends Events.EventEmitter {
                 break;
             case 'TODO_DELETE':
                 this.history.deleted++;
+                break;
+            case 'TODO_COMPLETE':
+                this.history.completed++;
                 break;
             default :
                 throw new Error('Unknow action type ${action.actionType}');

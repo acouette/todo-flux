@@ -27,6 +27,9 @@ class TodoListStore extends Events.EventEmitter {
             case 'TODO_DELETE':
                 delete this.todos[action.id];
                 break;
+            case 'TODO_COMPLETE':
+                this.todos[action.id].completed = !this.todos[action.id].completed;
+                break;
             default:
                 throw new Error('Unexpected action type : ' + action.actionType);
         }

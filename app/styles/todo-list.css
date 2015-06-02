@@ -81,11 +81,15 @@
 .todolist-item button:after {
     content: 'x';
 }
+
 .todolist-item button:hover {
     color: #af5b5e;
 }
 
-
 .todolist-item:hover button {
     display: inline;
+}
+
+.todolist-item-completed{
+    text-decoration: line-through;
 }
